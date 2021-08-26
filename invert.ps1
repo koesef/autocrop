@@ -1,14 +1,16 @@
-﻿#worx
+﻿#it works, for now
 $outputExtension = ".tif"
-$inputBaseName = dir -File | select -expand BaseName
-$currentPath = Get-Location | select -expand Path
+$inputBaseName = Get-ChildItem -File | Select-Object -expand BaseName
+$currentPath = Get-Location | Select-Object -expand Path
 
-$toExecute = 'magick.exe'
-$toExecute_Mode = 'convert'
-$toExecute_Mode2 = '-channel RGB -negate'
+#Get-ChildItem -File | Where-Object {$_.Name -like "*.tif"} | Select-Object -expand Name  
+
+# $toExecute = 'magick.exe'
+# $toExecute_Mode = 'convert'
+# $toExecute_Mode2 = '-channel RGB -negate'
 
 $dirname = "inverted"
-mkdir $dirname
+New-Item -ItemType directory -Path $dirname
 $outputPath = $currentPath+'\'+$dirname+'\'
 
 #convert input.png -channel RGB -negate output.png
