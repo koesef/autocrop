@@ -17,6 +17,7 @@ Detect external regions of contiguous color, draw boundaries and create enclosed
 * Check for pure white or pure black pixels and crop them out. There are rounded corners.
 ## Expected issues
 * Some images may have been cropped manually, and system should be smart enough to know that
+* Can't handle horizontal or vertical images, must use raw horizontal (un-rotated) from scanner
 ## Desired features
 * Auto detect negative or positive scan
 * Switchable settings etc.
